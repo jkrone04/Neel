@@ -1,0 +1,319 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Contact</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<style>
+    h1,h3{margin:0; border:0;}
+    p{margin: 20px;}
+</style>
+<style type="text/css">
+	.errMsg {color: #D20E11; border: solid 1px #d20e11; display:none;
+		padding: 1px 15px;	}
+
+    .middle-col{
+          background-color: #ccc;
+          width: 30%;
+          display: inline-block;
+          text-align: left;
+      }
+
+  .box{
+        color: #fff;
+        padding: 10px;
+        display: none;
+        margin-top: 10px;
+    }
+    .Grooming{ background: #ff0000; }
+    .Wash{ background: #228B22; }
+    .CustomIDTag{ background: #0000ff; }
+
+    .surround{
+    	background-color: #ccc;
+    	display: inline-block;
+      margin-left:auto;
+      margin-right:auto;
+    	text-align: center;
+    	padding-left: 30px;
+    	padding-right:30px;
+    	margin: 10px;
+      float: left;
+    }
+
+</style>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+$(document).ready(function(){
+    $('input[type="checkbox"]').click(function(){
+        var inputValue = $(this).attr("value");
+        $("." + inputValue).toggle();
+    });
+});
+</script>
+</head>
+
+<body>
+
+  <h1 class="header"> Neel "DJ Samba" Sambamurthy
+    <a href="home.html"><img src="logo.png"></a>
+  </h1>
+
+  <h3 class="topnav" >
+    <img style="width: 40px;margin-left:20;margin-bottom:5px;" src="prints.png">
+    <img style="width: 40px;margin-left:0;margin-bottom:5px;" src="prints2.png">
+    <img style="width: 40px;margin-left:0;margin-bottom:5px;" src="prints3.png">
+    <a class="active" href="contact.html">Contact</a>
+    <a href="aboutus.html">About us</a>
+    <a href="appointments.html">Appointments</a>
+    <a href="home.html">Home</a>
+  </h3>
+
+  <div class="spacing" style="height:180px">
+      <p></p>
+  </div>
+
+ <h2>Contact</h2>
+   <hr></hr>
+
+
+
+   <div class="surround">
+
+       <h4 style="font-size: 30px; margin-top:15px; margin-bottom:0;">Address: </h4>
+       347 Boston Avenue<br/>
+       Medford, MA 02155<br><br>
+   </div>
+
+   <div class="surround">
+       <h4 style="font-size: 30px">
+         <a href="mailto:petpalace@gmail.com">Email</a>
+       </h4>
+   </div>
+
+   <div class="surround">
+       <h4 style="font-size: 30px"> <a href="tel:555-555-5555">Phone</a>
+       </h4>
+   </div>
+
+
+
+   <div style="float:left; padding:5px; background-color: #9fc489; width:98%; margin: 10px;
+   ">
+       <img style="display:block; margin-left:auto; margin-right:auto;
+       width:30%;" src="loc.jpg">
+   </div>
+
+
+<script language="javascript">
+
+
+  function isNumeric(x) //uses built in isNaN() function to return if a an input is a number or not
+  {
+  	if (isNaN(x))
+  	{
+  		return false;
+  	}
+  	return true;
+  }
+
+  function myTime() //to get the user's currrent time from computer. rerferenced - plus2net.com/javascript_tutorial/clock.php
+{
+	var x = new Date() //date function pulls current date/time
+	var ampm = x.getHours( ) >= 12 ? ' PM' : ' AM'; //AM and PM time
+	hours = x.getHours( ) % 12; //12 hours not military time
+	hours = hours ? hours : 12;
+	hours=hours.toString().length==1? 0+hours.toString() : hours; //add 0 when singe digit
+
+	var minutes=x.getMinutes().toString()
+	minutes=minutes.length==1 ? 0+minutes : minutes;
+
+	var seconds=x.getSeconds().toString()
+	seconds=seconds.length==1 ? 0+seconds : seconds;
+
+	var month=(x.getMonth() +1).toString();
+	month=month.length==1 ? 0+month : month;
+
+	var dt=x.getDate().toString();
+	dt=dt.length==1 ? 0+dt : dt;
+
+	var x1=month + "/" + dt + "/" + x.getFullYear(); //mm/dd/yyyy format
+	return x1 = x1 + " - " +  hours + ":" +  minutes + ":" +  seconds + " " + ampm; //time
+}
+
+</script>
+
+<div class="form">
+    <br />
+    <h3>Book An Appointment!</h3>
+    <br />
+    <form name = 'appointments'>
+  Your Name*: <input type="text" name = 'name' required='1'>
+  <div id="errName" class="errMsg">A name is required</div><br/></br>
+  <br />
+
+    Phone Number*: <input type = "text" name = 'number' required='1'>
+    <div id="errNumber" class="errMsg">A phone number is required</div>
+    <div id="numError1" class="errMsg">Enter valid phone number (input contained spaces, symbols, or letters) </div>
+	<div id="numError2" class="errMsg">Enter valid phone number (input was not 10 digits) </div>
+	<div id="numError3" class="errMsg">Enter valid phone number (input was not 10 digits and contained spaces, symbols, or letters) </div>
+
+    <br/></br>
+    <br />
+
+  Pet's Name*: <input type = "text" name = 'animal' required='1'>
+  <div id="errAName" class="errMsg">Your pet's name is required</div><br/></br>
+  <br />
+
+  Services Required*:
+      <input type="checkbox" id="1" name="groom" value="Grooming">Grooming
+      <input type="checkbox" id="2" name="wash" value="Wash">Wash
+      <input type="checkbox" id="3" name="custom" value="CustomIDTag">Custom ID Tag
+      <div id="errCheck" class="errMsg">Select at least one option</div><br/>
+
+      <div class="middle-col">
+          <div id="check1" class="Grooming box"> </div>
+          <div id="check2" class="Wash box">  </div>
+          <div id="check3" class="CustomIDTag box"></div>
+      </div>
+  <br />
+    <br />
+  Additional Information:
+      <input type="text" >
+  <br />
+    <br />
+  <input type = "button" value = "Submit">
+  <br/>
+</div>
+<br/>
+
+<script language="javascript">
+
+$(document).ready(function()
+{
+
+  $('input[name="groom"]').click(function() //these things happen when button is clicked
+  {
+    name = document.getElementsByName("animal")[0].value;
+    document.getElementById("check1").innerText = name + " is going to be groomed!";
+  });
+  $('input[name="wash"]').click(function() //these things happen when button is clicked
+  {
+    name = document.getElementsByName("animal")[0].value;
+    document.getElementById("check2").innerText = name + " is going to get washed!";
+  });
+  $('input[name="custom"]').click(function() //these things happen when button is clicked
+  {
+    name = document.getElementsByName("animal")[0].value;
+    document.getElementById("check3").innerText = name + " is going to get a custom ID tag!";
+  });
+
+  $('input[type="button"]').click(function()
+  {
+      count = 0; //tallys when something needs to be validated, if things need to be validated it won't go to the new window/give order summary until inputs are fixed
+      count2 = 0;
+       if(document.getElementsByName("name")[0].value == "") //if no last name input gives error message
+	      {
+		        document.getElementById("errName").style.display = "inline-block";
+		        count++;
+	         }
+           if(document.getElementsByName("name")[0].value != "") //if no last name input gives error message
+    	      {
+    		        document.getElementById("errName").style.display = "none";
+    		        count2++;
+    	         }
+	     if(document.getElementsByName("number")[0].value == "") //if no phone input gives error message
+	       {
+		         document.getElementById("errNumber").style.display = "inline-block";
+		           count++;
+	            }
+	    x = document.getElementsByName("number")[0].value;
+	    if(x != "") //gives various error message for bad phone inputs
+	    {
+        invalid = false;
+        document.getElementById("errNumber").style.display = "none";
+		      if (isNumeric(x)==false) //not valid phone number if there are letters
+		       {
+			         if (x.length != 10) //not valid if not full 10 digit number
+			         {
+				         document.getElementById("numError3").style.display = "inline-block";
+                   document.getElementById("numError1").style.display = "none";
+                     document.getElementById("numError2").style.display = "none";
+				         count++;
+                 invalid = true;
+			         }
+			         else
+			         {
+				        document.getElementById("numError1").style.display = "inline-block";
+                document.getElementById("numError3").style.display = "none";
+                  document.getElementById("numError2").style.display = "none";
+				       count++;
+               invalid = true;
+			         }
+		        }
+		      else if (x.length != 10)
+	         {
+			          document.getElementById("numError2").style.display = "inline-block";
+                document.getElementById("numError1").style.display = "none";
+                  document.getElementById("numError3").style.display = "none";
+			             count++;
+                  invalid = true;
+		       }
+           if (invalid == false){
+             document.getElementById("numError2").style.display = "none";
+             document.getElementById("numError1").style.display = "none";
+               document.getElementById("numError3").style.display = "none";
+             document.getElementById("errNumber").style.display = "none";
+             count2++;
+           }
+	     }
+       if(document.getElementsByName("animal")[0].value == "") //if no phone input gives error message
+	       {
+		         document.getElementById("errAName").style.display = "inline-block";
+		           count++;
+	            }
+              if(document.getElementsByName("animal")[0].value != "") //if no phone input gives error message
+       	       {
+       		         document.getElementById("errAName").style.display = "none";
+       		           count2++;
+       	            }
+
+        var b1 = document.getElementById('1');
+        var b2 = document.getElementById('2');
+        var b3 = document.getElementById('3');
+        if(b1.checked || b2.checked || b3.checked) //if no box checked gives error message
+        {
+            document.getElementById("errCheck").style.display = "none";
+            count2++;
+        }
+        if(!b1.checked && !b2.checked && !b3.checked) //if no box checked gives error message
+        {
+            document.getElementById("errCheck").style.display = "inline-block";
+            count++;
+        }
+
+    if (count2 == 4)
+    {
+      t = myTime();
+      alert("See you soon! Your appointment was booked at " + t);
+      window.location.reload();
+    }
+  });
+});
+</script>
+
+
+
+<br/><br/>
+    <footer class="footer">
+    <a href="aboutus.html">About Us</a> &nbsp;&nbsp;&nbsp;
+    <a href="appointments.html">Appointments</a> &nbsp;&nbsp;&nbsp;
+    <a href="contact.html">Contact</a>
+    </footer>
+
+
+
+
+</body>
+
+</html>
