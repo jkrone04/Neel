@@ -64,7 +64,6 @@ $(document).ready(function(){
     <img style="width: 40px;margin-left:0;margin-bottom:5px;" src="prints2.png">
     <img style="width: 40px;margin-left:0;margin-bottom:5px;" src="prints3.png">
     <a class="active" href="contact.html">Contact</a>
-    <a href="aboutus.html">About us</a>
     <a href="appointments.html">Appointments</a>
     <a href="index.html">Home</a>
   </h3>
@@ -81,18 +80,18 @@ $(document).ready(function(){
    <div class="surround">
 
        <h4 style="font-size: 30px; margin-top:15px; margin-bottom:0;">Address: </h4>
-       347 Boston Avenue<br/>
-       Medford, MA 02155<br><br>
+       64 Chetwynd Road<br/>
+       Somerville, MA 02144<br><br>
    </div>
 
    <div class="surround">
        <h4 style="font-size: 30px">
-         <a href="mailto:petpalace@gmail.com">Email</a>
+         <a href="mailto:Neel.Sambamurthy@tufts.edu">Email</a>
        </h4>
    </div>
 
    <div class="surround">
-       <h4 style="font-size: 30px"> <a href="tel:555-555-5555">Phone</a>
+       <h4 style="font-size: 30px"> <a href="tel:973-309-5480">Phone</a>
        </h4>
    </div>
 
@@ -155,20 +154,22 @@ $(document).ready(function(){
     Phone Number*: <input type = "text" name = 'number' required='1'>
     <div id="errNumber" class="errMsg">A phone number is required</div>
     <div id="numError1" class="errMsg">Enter valid phone number (input contained spaces, symbols, or letters) </div>
-	<div id="numError2" class="errMsg">Enter valid phone number (input was not 10 digits) </div>
-	<div id="numError3" class="errMsg">Enter valid phone number (input was not 10 digits and contained spaces, symbols, or letters) </div>
+  <div id="numError2" class="errMsg">Enter valid phone number (input was not 10 digits) </div>
+  <div id="numError3" class="errMsg">Enter valid phone number (input was not 10 digits and contained spaces, symbols, or letters) </div>
 
-    <br/></br>
     <br />
 
-  Pet's Name*: <input type = "text" name = 'animal' required='1'>
-  <div id="errAName" class="errMsg">Your pet's name is required</div><br/></br>
+  <br /><br>
+
+  Day/Time Preference*: <input type = "text" name = 'timing' required='1'>
   <br />
 
-  Services Required*:
-      <input type="checkbox" id="1" name="groom" value="Grooming">Grooming
-      <input type="checkbox" id="2" name="wash" value="Wash">Wash
-      <input type="checkbox" id="3" name="custom" value="CustomIDTag">Custom ID Tag
+  <br /><br>
+
+  Appointment Type*:
+      <input type="checkbox" id="1" name="groom" value="Grooming">Tennis Session
+      <input type="checkbox" id="2" name="wash" value="Wash">Quich Baking
+      <input type="checkbox" id="3" name="custom" value="CustomIDTag">Jog With Neel
       <div id="errCheck" class="errMsg">Select at least one option</div><br/>
 
       <div class="middle-col">
@@ -176,7 +177,7 @@ $(document).ready(function(){
           <div id="check2" class="Wash box">  </div>
           <div id="check3" class="CustomIDTag box"></div>
       </div>
-  <br />
+  <br /><br>
     <br />
   Additional Information:
       <input type="text" >
@@ -194,18 +195,18 @@ $(document).ready(function()
 
   $('input[name="groom"]').click(function() //these things happen when button is clicked
   {
-    name = document.getElementsByName("animal")[0].value;
-    document.getElementById("check1").innerText = name + " is going to be groomed!";
+    name = document.getElementsByName("name")[0].value;
+    document.getElementById("check1").innerText = name + " and Neel will play tennis!";
   });
   $('input[name="wash"]').click(function() //these things happen when button is clicked
   {
-    name = document.getElementsByName("animal")[0].value;
-    document.getElementById("check2").innerText = name + " is going to get washed!";
+    name = document.getElementsByName("name")[0].value;
+    document.getElementById("check2").innerText = name + " and Neel will bake a quich!";
   });
   $('input[name="custom"]').click(function() //these things happen when button is clicked
   {
-    name = document.getElementsByName("animal")[0].value;
-    document.getElementById("check3").innerText = name + " is going to get a custom ID tag!";
+    name = document.getElementsByName("name")[0].value;
+    document.getElementById("check3").innerText = name + " and Neel will go for a jog!";
   });
 
   $('input[type="button"]').click(function()
@@ -213,52 +214,52 @@ $(document).ready(function()
       count = 0; //tallys when something needs to be validated, if things need to be validated it won't go to the new window/give order summary until inputs are fixed
       count2 = 0;
        if(document.getElementsByName("name")[0].value == "") //if no last name input gives error message
-	      {
-		        document.getElementById("errName").style.display = "inline-block";
-		        count++;
-	         }
+        {
+            document.getElementById("errName").style.display = "inline-block";
+            count++;
+           }
            if(document.getElementsByName("name")[0].value != "") //if no last name input gives error message
-    	      {
-    		        document.getElementById("errName").style.display = "none";
-    		        count2++;
-    	         }
-	     if(document.getElementsByName("number")[0].value == "") //if no phone input gives error message
-	       {
-		         document.getElementById("errNumber").style.display = "inline-block";
-		           count++;
-	            }
-	    x = document.getElementsByName("number")[0].value;
-	    if(x != "") //gives various error message for bad phone inputs
-	    {
+            {
+                document.getElementById("errName").style.display = "none";
+                count2++;
+               }
+       if(document.getElementsByName("number")[0].value == "") //if no phone input gives error message
+         {
+             document.getElementById("errNumber").style.display = "inline-block";
+               count++;
+              }
+      x = document.getElementsByName("number")[0].value;
+      if(x != "") //gives various error message for bad phone inputs
+      {
         invalid = false;
         document.getElementById("errNumber").style.display = "none";
-		      if (isNumeric(x)==false) //not valid phone number if there are letters
-		       {
-			         if (x.length != 10) //not valid if not full 10 digit number
-			         {
-				         document.getElementById("numError3").style.display = "inline-block";
+          if (isNumeric(x)==false) //not valid phone number if there are letters
+           {
+               if (x.length != 10) //not valid if not full 10 digit number
+               {
+                 document.getElementById("numError3").style.display = "inline-block";
                    document.getElementById("numError1").style.display = "none";
                      document.getElementById("numError2").style.display = "none";
-				         count++;
+                 count++;
                  invalid = true;
-			         }
-			         else
-			         {
-				        document.getElementById("numError1").style.display = "inline-block";
+               }
+               else
+               {
+                document.getElementById("numError1").style.display = "inline-block";
                 document.getElementById("numError3").style.display = "none";
                   document.getElementById("numError2").style.display = "none";
-				       count++;
+               count++;
                invalid = true;
-			         }
-		        }
-		      else if (x.length != 10)
-	         {
-			          document.getElementById("numError2").style.display = "inline-block";
+               }
+            }
+          else if (x.length != 10)
+           {
+                document.getElementById("numError2").style.display = "inline-block";
                 document.getElementById("numError1").style.display = "none";
                   document.getElementById("numError3").style.display = "none";
-			             count++;
+                   count++;
                   invalid = true;
-		       }
+           }
            if (invalid == false){
              document.getElementById("numError2").style.display = "none";
              document.getElementById("numError1").style.display = "none";
@@ -266,17 +267,17 @@ $(document).ready(function()
              document.getElementById("errNumber").style.display = "none";
              count2++;
            }
-	     }
+       }
        if(document.getElementsByName("animal")[0].value == "") //if no phone input gives error message
-	       {
-		         document.getElementById("errAName").style.display = "inline-block";
-		           count++;
-	            }
+         {
+             document.getElementById("errAName").style.display = "inline-block";
+               count++;
+              }
               if(document.getElementsByName("animal")[0].value != "") //if no phone input gives error message
-       	       {
-       		         document.getElementById("errAName").style.display = "none";
-       		           count2++;
-       	            }
+               {
+                   document.getElementById("errAName").style.display = "none";
+                     count2++;
+                    }
 
         var b1 = document.getElementById('1');
         var b2 = document.getElementById('2');
