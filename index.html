@@ -49,7 +49,7 @@
       </center>
 
      <div class="subtitle outline">
-         <h2>His Birthmark Looks Like Argentina!</h2>
+         <h2>His Birthmark Looks Like South America!</h2>
      </div>
 
     </div>
@@ -85,7 +85,7 @@
 
     function slideIn2() {
       petIndex2+=2;
-      petIndex2 = petIndex2 == pets.length? 1 : petIndex2;
+      petIndex2 = petIndex2 == (pets.length+1)? 1 : petIndex2;
       $("#img2 img").attr("src", pets[petIndex2]);
       $("#img2 img").fadeIn(1000, slideOut2);
     }
