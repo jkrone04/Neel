@@ -111,12 +111,18 @@ width: 30%;
 .col-one{
 	background-color: #ddd;
 	width: 45%;
+	width: 545px;
+	height: 410px;
+	top: 0px;
 	display: inline-block;
 	text-align: center;
 }
 
 .col-two{
 	width: 45%;
+	width: 545px;
+	height: 410px;
+	top: 0px;
 	display: inline-block;
 	text-align: center;
 }
